@@ -1,0 +1,56 @@
+Definição do Projeto Desenvolvido no Curso de Lógica de Programação ministrado pela EAD Proway e disponibilizado pela Capgemini
+
+Todo Java
+
+Descrição: Aplicação para o gerenciamento de projetos e as tarefas envolvidas nesses projetos
+
+Objetivo: Resolver a questão de organização de tarefas de um ou vários projetos
+
+Entidades:
+
+* Projeto;
+	- Nome
+	- Descrição
+	- Data de criação
+	- Data de atualização
+	
+* Tarefa;
+	- Nome
+	- Descrição
+	- Status
+	- Observações
+	- Prazo
+	- Data de criação
+	- Data de atualização
+
+Requisitos:
+
+* Permitir criar o Projeto;
+* Permitir alterar o Projeto;
+* Permitir deletar o Projeto;
+
+* Permitir criar a Tarefa;
+* Permitir alterar a Tarefa;
+* Permitir deletar a Tarefa;
+
+Tecnologias utilizadas:
+
+* Java;
+* MySql;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
