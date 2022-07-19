@@ -95,11 +95,11 @@ public class Task {
 		this.createdAt = createdAt;
 	}
 
-	public Date getUpdated() {
+	public Date getUpdatedAt() {
 		return updated;
 	}
 
-	public void setUpdated(Date updated) {
+	public void setUpdatedAt(Date updated) {
 		this.updated = updated;
 	}
 
