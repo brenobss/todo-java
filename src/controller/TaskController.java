@@ -140,11 +140,11 @@ public class TaskController {
 			}
 			
 		} catch (Exception e) {			
-			throw new RuntimeException("Erro ao inserir a tarefa " + e.getMessage(), e);
+			throw new RuntimeException("Erro ao retornar tarefas " + e.getMessage(), e);
 		} finally {
 			ConnectionFactory.closeConnection(conn, statement, resultSet);;
 		}
 		
-		return null;
+		return tasks;
 	}
 }
