@@ -4,16 +4,26 @@ import java.util.Date;
 
 public class Project {
 	
+	private Integer id;
 	private String name;
 	private String description;
 	private Date createdAt;
 	private Date updatedAt;
 	
-	public Project(String name, String description, Date createdAt, Date updatedAt) {
+	public Project(Integer id, String name, String description, Date createdAt, Date updatedAt) {
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
