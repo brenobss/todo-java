@@ -29,12 +29,17 @@ import javax.swing.JList;
 import javax.swing.UIManager;
 import javax.swing.ListSelectionModel;
 import javax.swing.AbstractListModel;
+import javax.swing.JTable;
+import javax.swing.border.LineBorder;
+import javax.swing.DropMode;
+import java.awt.Rectangle;
 
 public class MainScreen {
 
 	private JFrame frame;
 	private final JPanel panelTooBar = new JPanel();
 	private JLabel emptyListTitle;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -156,28 +161,16 @@ public class MainScreen {
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(null);
 		
-		JPanel panelEmptyList = new JPanel();
-		panelEmptyList.setBackground(Color.WHITE);
-		panelEmptyList.setBounds(10, 11, 466, 263);
-		panel_4.add(panelEmptyList);
-		panelEmptyList.setLayout(null);
-		
-		JLabel emptyListIcon = new JLabel("");
-		emptyListIcon.setIcon(new ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\lists.png"));
-		emptyListIcon.setBounds(168, 50, 136, 136);
-		panelEmptyList.add(emptyListIcon);
-		
-		emptyListTitle = new JLabel("Nenhuma tarefa por aqui :D");
-		emptyListTitle.setForeground(new Color(0, 153, 102));
-		emptyListTitle.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		emptyListTitle.setBounds(142, 197, 197, 20);
-		panelEmptyList.add(emptyListTitle);
-		
-		JLabel emptyListSubTitle = new JLabel("Clique no botão \"+\" para adicionar uma tarefa");
-		emptyListSubTitle.setForeground(UIManager.getColor("CheckBox.darkShadow"));
-		emptyListSubTitle.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		emptyListSubTitle.setBounds(93, 220, 305, 20);
-		panelEmptyList.add(emptyListSubTitle);
+		table = new JTable();
+		table.setDragEnabled(true);
+		table.setDoubleBuffered(true);
+		table.setColumnSelectionAllowed(true);
+		table.setCellSelectionEnabled(true);
+		table.setBounds(new Rectangle(1, 4, 0, 0));
+		table.setBorder(new LineBorder(UIManager.getColor("CheckBox.darkShadow")));
+		table.setAutoCreateRowSorter(true);
+		table.setBounds(10, 11, 466, 263);
+		panel_4.add(table);
 		
 		JPanel panelTasks = new JPanel();
 		panelTasks.setBackground(new Color(255, 255, 255));
@@ -234,6 +227,29 @@ public class MainScreen {
 		tasksSubTitle.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		tasksSubTitle.setIcon(new ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\add.png"));
 		panelTasks.add(tasksSubTitle, "31, 2, 3, 1, right, center");
+		
+		JPanel panelEmptyList = new JPanel();
+		panelEmptyList.setBounds(617, 314, 482, 281);
+		frame.getContentPane().add(panelEmptyList);
+		panelEmptyList.setBackground(Color.WHITE);
+		panelEmptyList.setLayout(null);
+		
+		JLabel emptyListIcon = new JLabel("");
+		emptyListIcon.setIcon(new ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\lists.png"));
+		emptyListIcon.setBounds(168, 50, 136, 136);
+		panelEmptyList.add(emptyListIcon);
+		
+		emptyListTitle = new JLabel("Nenhuma tarefa por aqui :D");
+		emptyListTitle.setForeground(new Color(0, 153, 102));
+		emptyListTitle.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		emptyListTitle.setBounds(142, 197, 197, 20);
+		panelEmptyList.add(emptyListTitle);
+		
+		JLabel emptyListSubTitle = new JLabel("Clique no botão \"+\" para adicionar uma tarefa");
+		emptyListSubTitle.setForeground(UIManager.getColor("CheckBox.darkShadow"));
+		emptyListSubTitle.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		emptyListSubTitle.setBounds(93, 220, 305, 20);
+		panelEmptyList.add(emptyListSubTitle);
 	}
 	public Color getLblNewLabel_7Foreground() {
 		return emptyListTitle.getForeground();
