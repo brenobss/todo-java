@@ -226,6 +226,9 @@
                   <Image iconType="2" name="C:\Users\breno\Documents\Workspace\todo-java\resources\add.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelProjectsAddMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
