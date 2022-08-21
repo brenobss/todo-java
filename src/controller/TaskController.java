@@ -125,13 +125,14 @@ public class TaskController {
 			
 			while(resultSet.next()) {
 				Task task = new Task();
-				
+
 				task.setId(resultSet.getInt("id"));
 				task.setIdProject(resultSet.getInt("idProject"));
 				task.setName(resultSet.getString("name"));
 				task.setDescription(resultSet.getString("description"));
 				task.setNotes(resultSet.getString("notes"));
 				task.setCompleted(resultSet.getBoolean("completed"));
+                                System.out.println("Task" + task.toString());
 				task.setDeadline(resultSet.getDate("deadline"));
 				task.setCreatedAt(resultSet.getDate("createdAt"));
 				task.setUpdatedAt(resultSet.getDate("updatedAt"));
@@ -139,10 +140,11 @@ public class TaskController {
 				tasks.add(task);
 			}
 			
-		} catch (Exception e) {			
-			throw new RuntimeException("Erro ao retornar tarefas " + e.getMessage(), e);
+		} catch (SQLException e) {	
+                    
+                    throw new RuntimeException("Erro ao retornar tarefas " + e.getMessage(), e);
 		} finally {
-			ConnectionFactory.closeConnection(conn, statement, resultSet);;
+			ConnectionFactory.closeConnection(conn, statement, resultSet);
 		}
 		
 		return tasks;

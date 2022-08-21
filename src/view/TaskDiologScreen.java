@@ -205,11 +205,12 @@ public class TaskDiologScreen extends javax.swing.JFrame {
             task.setName(jTextFieldName.getText());
             task.setDescription(jTextAreaDescription.getText());
             task.setNotes(jTextAreaNotes.getText());
-            controller.save(task);
+            task.setCompleted(false);
             SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date deadline;
             deadline = dataFormat.parse(jFormattedTextFieldDeadLine.getText());
             task.setDeadline(deadline);
+            controller.save(task);
             
             JOptionPane.showMessageDialog(rootPane, "Tarefa salva com sucesso");
         } catch (Exception e) {
