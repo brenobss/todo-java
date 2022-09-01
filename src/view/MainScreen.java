@@ -385,9 +385,17 @@ public class MainScreen extends javax.swing.JFrame {
     private void jLabelTasksAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTasksAddMouseClicked
         // TODO add your handling code here:
         TaskDiologScreen taskDiologScreen = new TaskDiologScreen();
-        List<Project> project = projectController.getAll();
-        taskDiologScreen.setProject(project.get(0));
+        int projectIndex = jList1.getSelectedIndex();
+        Project project = (Project) projectsModel.get(projectIndex);
+        taskDiologScreen.setProject(project);
         taskDiologScreen.setVisible(true);
+        taskDiologScreen.addWindowListener(new WindowAdapter() {
+            public void windowClosed(WindowEvent e){
+                int projectIndex = jList1.getSelectedIndex();
+                Project project = (Project) projectsModel.get(projectIndex);
+                loadTasks(project.getId());
+            }
+        });
     }//GEN-LAST:event_jLabelTasksAddMouseClicked
 
     private void jTableTasksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableTasksMouseClicked
@@ -408,8 +416,11 @@ public class MainScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableTasksMouseClicked
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        //TaskDiologScreen taskDiologScreen = new TaskDiologScreen();
         int projectIndex = jList1.getSelectedIndex();
         Project project = (Project) projectsModel.get(projectIndex);
+        //taskDiologScreen.setProject(project);
+        loadTasks(project.getId());
     }//GEN-LAST:event_jList1MouseClicked
 
     /**
