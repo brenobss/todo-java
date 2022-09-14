@@ -59,7 +59,7 @@ public class TaskController {
 				+ "completed = ?, "
 				+ "deadline = ?, "
 				+ "createdAt = ?, "
-				+ "updatedAt = ?, "
+				+ "updatedAt = ? "
 				+ "WHERE id = ?";
 		
 		Connection conn = null;
@@ -79,15 +79,16 @@ public class TaskController {
 			statement.setDate(7, new Date(task.getCreatedAt().getTime()));
 			statement.setDate(8, new Date(task.getUpdatedAt().getTime()));
 			statement.setInt(9, task.getId());
+                        System.out.println("statement: " + statement.toString());
 			statement.execute();
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao atualizar a tarefa " + e.getMessage(), e);
 		} finally {
 			ConnectionFactory.closeConnection(conn, statement);
 		}
 	}
 	
-	public void removeById(int taskId) throws SQLException {
+	public void removeById(int taskId) {
 		String sql = "DELETE FROM tasks WHERE id = ?";
 		Connection conn = null;
 		PreparedStatement statement = null;
@@ -132,7 +133,6 @@ public class TaskController {
 				task.setDescription(resultSet.getString("description"));
 				task.setNotes(resultSet.getString("notes"));
 				task.setCompleted(resultSet.getBoolean("completed"));
-                                System.out.println("Task" + task.toString());
 				task.setDeadline(resultSet.getDate("deadline"));
 				task.setCreatedAt(resultSet.getDate("createdAt"));
 				task.setUpdatedAt(resultSet.getDate("updatedAt"));

@@ -46,7 +46,7 @@ public class ProjectController {
 				+ "name = ?, "
 				+ "description = ?, "
 				+ "createdAt = ?, "
-				+ "updatedAt = ?, "
+				+ "updatedAt = ? "
 				+ "WHERE id = ?";
 		
 		Connection conn = null;
