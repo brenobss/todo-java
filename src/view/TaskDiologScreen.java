@@ -200,23 +200,32 @@ public class TaskDiologScreen extends javax.swing.JFrame {
         
         try {
             
-            Task task = new Task();
-            task.setIdProject(project.getId());
-            task.setName(jTextFieldName.getText());
-            task.setDescription(jTextAreaDescription.getText());
-            task.setNotes(jTextAreaNotes.getText());
-            task.setCompleted(false);
-            SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy");
-            Date deadline;
-            deadline = dataFormat.parse(jFormattedTextFieldDeadLine.getText());
-            task.setDeadline(deadline);
-            controller.save(task);
+            if(jTextFieldName.getText().isEmpty() || jFormattedTextFieldDeadLine.getText().isEmpty()){
+                JOptionPane.showMessageDialog(rootPane, "A tarefa não foi salva pois "
+                        + "existem campos obrigatórios a serem preenchidos");
+            }
+            else {
+                 Task task = new Task();
+                task.setIdProject(project.getId());
+                task.setName(jTextFieldName.getText());
+                task.setDescription(jTextAreaDescription.getText());
+                task.setNotes(jTextAreaNotes.getText());
+                task.setCompleted(false);
+                SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date deadline;
+                deadline = dataFormat.parse(jFormattedTextFieldDeadLine.getText());
+                task.setDeadline(deadline);
+                controller.save(task);
+
+                JOptionPane.showMessageDialog(rootPane, "Tarefa salva com sucesso");
+                this.dispose();
+            }
             
-            JOptionPane.showMessageDialog(rootPane, "Tarefa salva com sucesso");
+           
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
-        this.dispose();
+        
     }//GEN-LAST:event_jLabelToolBarSaveMouseClicked
 
     /**
