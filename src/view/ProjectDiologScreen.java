@@ -55,7 +55,7 @@ public class ProjectDiologScreen extends javax.swing.JFrame {
         jLabelToolBarTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelToolBarTitle.setText("Projeto");
 
-        jLabelToolBarSave.setIcon(new javax.swing.ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\check.png")); // NOI18N
+        jLabelToolBarSave.setIcon(new javax.swing.ImageIcon("/home/breno/Documentos/Workspace/todo-java/resources/check.png")); // NOI18N
         jLabelToolBarSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelToolBarSaveMouseClicked(evt);
@@ -89,7 +89,7 @@ public class ProjectDiologScreen extends javax.swing.JFrame {
         jLabelProjectName.setText("Nome");
 
         jLabelProjectDescription.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelProjectDescription.setText("Descrição");
+        jLabelProjectDescription.setText("DescriÃ§Ã£o");
 
         jTextAreaDescription.setColumns(20);
         jTextAreaDescription.setRows(5);

@@ -61,7 +61,7 @@ public class TaskDiologScreen extends javax.swing.JFrame {
         jLabelToolBarTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelToolBarTitle.setText("Tarefa");
 
-        jLabelToolBarSave.setIcon(new javax.swing.ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\check.png")); // NOI18N
+        jLabelToolBarSave.setIcon(new javax.swing.ImageIcon("/home/breno/Documentos/Workspace/todo-java/resources/check.png")); // NOI18N
         jLabelToolBarSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelToolBarSaveMouseClicked(evt);
@@ -101,7 +101,7 @@ public class TaskDiologScreen extends javax.swing.JFrame {
         });
 
         jLabelDescription.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelDescription.setText("Descrição");
+        jLabelDescription.setText("DescriÃ§Ã£o");
 
         jTextAreaDescription.setColumns(20);
         jTextAreaDescription.setRows(5);
@@ -162,7 +162,7 @@ public class TaskDiologScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabelNotes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

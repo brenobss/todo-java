@@ -78,7 +78,7 @@ public class MainScreen extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Nome", "DescriÁ„o", "Prazo", "Tarefa ConcluÌda"
+                "Nome", "Descri√ß√£o", "Prazo", "Tarefa Conclu√≠da"
             }
         ) {
             Class[] types = new Class [] {
@@ -117,7 +117,7 @@ public class MainScreen extends javax.swing.JFrame {
         jLabelProjectsTitle.setForeground(new java.awt.Color(0, 153, 102));
         jLabelProjectsTitle.setText("Projetos");
 
-        jLabelProjectsAdd.setIcon(new javax.swing.ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\add.png")); // NOI18N
+        jLabelProjectsAdd.setIcon(new javax.swing.ImageIcon("/home/breno/Documentos/Workspace/todo-java/resources/add.png")); // NOI18N
         jLabelProjectsAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelProjectsAddMouseClicked(evt);
@@ -151,7 +151,8 @@ public class MainScreen extends javax.swing.JFrame {
         jLabelTasksTitle.setForeground(new java.awt.Color(0, 153, 102));
         jLabelTasksTitle.setText("Tarefas");
 
-        jLabelTasksAdd.setIcon(new javax.swing.ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\add.png")); // NOI18N
+        jLabelTasksAdd.setIcon(new javax.swing.ImageIcon("/home/breno/Documentos/Workspace/todo-java/resources/add.png")); // NOI18N
+        jLabelTasksAdd.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         jLabelTasksAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelTasksAddMouseClicked(evt);
@@ -165,8 +166,8 @@ public class MainScreen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTasksLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelTasksTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 541, Short.MAX_VALUE)
-                .addComponent(jLabelTasksAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 557, Short.MAX_VALUE)
+                .addComponent(jLabelTasksAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanelTasksLayout.setVerticalGroup(
@@ -204,13 +205,13 @@ public class MainScreen extends javax.swing.JFrame {
             jPanelProjectsListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelProjectsListLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
         jPanelTooBar.setBackground(new java.awt.Color(0, 153, 102));
 
-        jLabelTooBarIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\tick.png")); // NOI18N
+        jLabelTooBarIcon.setIcon(new javax.swing.ImageIcon("/home/breno/Documentos/Workspace/todo-java/resources/tick.png")); // NOI18N
 
         jLabelTooBarTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelTooBarTitle.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,7 +220,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         jLabelTooBarSubTitle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabelTooBarSubTitle.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTooBarSubTitle.setText("Anote tudo, n„o esqueÁa de nada!");
+        jLabelTooBarSubTitle.setText("Anote tudo, n√£o esque√ßa de nada!");
 
         javax.swing.GroupLayout jPanelTooBarLayout = new javax.swing.GroupLayout(jPanelTooBar);
         jPanelTooBar.setLayout(jPanelTooBarLayout);
@@ -249,14 +250,14 @@ public class MainScreen extends javax.swing.JFrame {
                         .addComponent(jLabelTooBarIcon)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelTooBarSubTitle)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanelTasksList.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabelTasksListIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\breno\\Documents\\Workspace\\todo-java\\resources\\lists.png")); // NOI18N
+        jLabelTasksListIcon.setIcon(new javax.swing.ImageIcon("/home/breno/Documentos/Workspace/todo-java/resources/lists.png")); // NOI18N
 
         jLabelTasksListTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelTasksListTitle.setForeground(new java.awt.Color(0, 153, 102));
@@ -264,7 +265,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         jLabelTasksListSubTitle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabelTasksListSubTitle.setForeground(new java.awt.Color(204, 204, 204));
-        jLabelTasksListSubTitle.setText("Clique no bot„o \"+\" para adicionar uma tarefa");
+        jLabelTasksListSubTitle.setText("Clique no bot√£o \"+\" para adicionar uma tarefa");
 
         javax.swing.GroupLayout jPanelTasksListLayout = new javax.swing.GroupLayout(jPanelTasksList);
         jPanelTasksList.setLayout(jPanelTasksListLayout);
@@ -309,7 +310,7 @@ public class MainScreen extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
